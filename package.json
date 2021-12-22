@@ -1,6 +1,6 @@
 {
   "name": "bz-date",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Date library",
   "main": "index.js",
   "scripts": {
