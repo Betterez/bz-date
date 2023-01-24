@@ -60,7 +60,7 @@ describe("BzDate", function () {
         "tz" : "America/Monterrey"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-300);
+      expect(offset).to.be.eql(-360);
     });
 
     it("should get the daylight offset of the America/Tijuana timezone", () => {
