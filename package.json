@@ -1,7 +1,7 @@
 {
   "name": "bz-date",
   "version": "1.1.0",
-  "description": "Date library",
+  "description": "Date library for btrz",
   "main": "index.js",
   "scripts": {
     "tdd": "mocha --recursive tests/ -w",
