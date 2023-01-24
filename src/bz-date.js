@@ -12,7 +12,9 @@ var cutOffDaylightDates = {
   "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
   "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
   "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-  "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+  "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+  "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+  "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
 };
 
 var zones = {
@@ -73,8 +75,8 @@ var zones = {
   "(UTC-7:00) Chihuahua - Away from US border (Mexico)": {
       "tz": "America/Chihuahua",
       "daylight": {key: "L7DT-America/Chihuahua", name: "UTC-7 Daylight Time", offSet: -360},
-      "standard": {key: "L7ST-America/Chihuahua", name: "UTC-7 Standard Time", offSet: -420},
-      "observe_DST": true
+      "standard": {key: "L7ST-America/Chihuahua", name: "UTC-7 Standard Time", offSet: -360},
+      "observe_DST": false
   },
   "(UTC-7:00) Chihuahua - Near US border (Mexico), Ojinaga (Mexico)": {
       "tz": "America/Ojinaga",
@@ -132,15 +134,15 @@ var zones = {
   },
   "(UTC-6:00) Mexico City (Mexico)": {
       "tz": "America/Mexico_City",
-      "daylight": {key: "L6DT-America/Mexico_City", name: "UTC-6 Daylight Time", offSet: -300},
+      "daylight": {key: "L6DT-America/Mexico_City", name: "UTC-6 Daylight Time", offSet: -360},
       "standard": {key: "L6ST-America/Mexico_City", name: "UTC-6 Standard Time", offSet: -360},
-      "observe_DST": true
+      "observe_DST": false
   },
   "(UTC-6:00) Monterrey (Mexico)": {
       "tz": "America/Monterrey",
-      "daylight": {key: "L6DT-America/Monterrey", name: "UTC-6 Daylight Time", offSet: -300},
+      "daylight": {key: "L6DT-America/Monterrey", name: "UTC-6 Daylight Time", offSet: -360},
       "standard": {key: "L6ST-America/Monterrey", name: "UTC-6 Standard Time", offSet: -360},
-      "observe_DST": true
+      "observe_DST": false
   },
   "(UTC-6:00) Regina (Saskatchewan)": {
       "tz": "America/Regina",
@@ -406,7 +408,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   },
   "America/Monterrey": {
       "2019": {from: new BzDate("04/07/2019"), to: new BzDate("10/27/2019")},
@@ -414,7 +418,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("04/04/2021"), to: new BzDate("10/31/2021")},
       "2022": {from: new BzDate("04/03/2022"), to: new BzDate("10/30/2022")},
       "2023": {from: new BzDate("04/02/2023"), to: new BzDate("10/29/2023")},
-      "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
+      "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
+      "2025": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
+      "2026": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
   },
   "America/Matamoros": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -422,7 +428,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   },
   "America/Mexico_City": {
       "2019": {from: new BzDate("04/07/2019"), to: new BzDate("10/27/2019")},
@@ -430,7 +438,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("04/04/2021"), to: new BzDate("10/31/2021")},
       "2022": {from: new BzDate("04/03/2022"), to: new BzDate("10/30/2022")},
       "2023": {from: new BzDate("04/02/2023"), to: new BzDate("10/29/2023")},
-      "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
+      "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
+      "2025": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
+      "2026": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
   },
   "America/Chihuahua": {
       "2019": {from: new BzDate("04/07/2019"), to: new BzDate("10/27/2019")},
@@ -438,7 +448,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("04/04/2021"), to: new BzDate("10/31/2021")},
       "2022": {from: new BzDate("04/03/2022"), to: new BzDate("10/30/2022")},
       "2023": {from: new BzDate("04/02/2023"), to: new BzDate("10/29/2023")},
-      "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
+      "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
+      "2025": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
+      "2026": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
   },
   "America/Ojinaga": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -446,7 +458,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   },
   "America/Chicago": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -454,7 +468,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   },
   "America/Tijuana": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -462,7 +478,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   },
   "America/Los_Angeles": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -470,7 +488,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   },
   "America/Vancouver": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -478,7 +498,9 @@ var cutOffDaylightDatesByTimezone = {
       "2021": {from: new BzDate("03/14/2021"), to: new BzDate("11/07/2021")},
       "2022": {from: new BzDate("03/13/2022"), to: new BzDate("11/06/2022")},
       "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
-      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")}
+      "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
+      "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
+      "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
   }
 };
 
