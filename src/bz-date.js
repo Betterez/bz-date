@@ -419,8 +419,8 @@ var cutOffDaylightDatesByTimezone = {
       "2022": {from: new BzDate("04/03/2022"), to: new BzDate("10/30/2022")},
       "2023": {from: new BzDate("04/02/2023"), to: new BzDate("10/29/2023")},
       "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
-      "2025": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
-      "2026": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
+      "2025": {from: new BzDate("04/07/2025"), to: new BzDate("10/27/2025")},
+      "2026": {from: new BzDate("04/07/2026"), to: new BzDate("10/27/2026")}
   },
   "America/Matamoros": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
@@ -439,8 +439,8 @@ var cutOffDaylightDatesByTimezone = {
       "2022": {from: new BzDate("04/03/2022"), to: new BzDate("10/30/2022")},
       "2023": {from: new BzDate("04/02/2023"), to: new BzDate("10/29/2023")},
       "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
-      "2025": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
-      "2026": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
+      "2025": {from: new BzDate("04/07/2025"), to: new BzDate("10/27/2025")},
+      "2026": {from: new BzDate("04/07/2026"), to: new BzDate("10/27/2026")}
   },
   "America/Chihuahua": {
       "2019": {from: new BzDate("04/07/2019"), to: new BzDate("10/27/2019")},
@@ -449,8 +449,8 @@ var cutOffDaylightDatesByTimezone = {
       "2022": {from: new BzDate("04/03/2022"), to: new BzDate("10/30/2022")},
       "2023": {from: new BzDate("04/02/2023"), to: new BzDate("10/29/2023")},
       "2024": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
-      "2025": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")},
-      "2026": {from: new BzDate("04/07/2024"), to: new BzDate("10/27/2024")}
+      "2025": {from: new BzDate("04/07/2025"), to: new BzDate("10/27/2025")},
+      "2026": {from: new BzDate("04/07/2026"), to: new BzDate("10/27/2026")}
   },
   "America/Ojinaga": {
       "2019": {from: new BzDate("03/10/2019"), to: new BzDate("11/03/2019")},
