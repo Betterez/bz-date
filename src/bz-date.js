@@ -654,7 +654,7 @@ function NullBzDate() {
   };
 
   this.isEqual = function (date) {
-      if (!(date instanceof BzDate)) {
+      if (!(isBzDate(date))) {
           throw new Error("Invalid argument - date: " + date);
       }
 
@@ -682,6 +682,10 @@ function NullBzDate() {
   };
 }
 
+function isBzDate(bzDate) {
+  return bzDate && bzDate.toLiteral !== undefined;
+}
+
 function BzDate(dateOrLiteralOrYear, formatOrOffsetOrMonth, offsetOrDay, hour, min, sec, msec, offset) {
   var _date = new Date();
   var _timezoneOffset = 0;
@@ -700,7 +704,7 @@ function BzDate(dateOrLiteralOrYear, formatOrOffsetOrMonth, offsetOrDay, hour, m
           }
 
       // A BzDate object
-      } else if (dateOrLiteralOrYear instanceof BzDate) {
+      } else if (isBzDate(dateOrLiteralOrYear)) {
           _date = new Date(dateOrLiteralOrYear.getTime());
           _timezoneOffset = dateOrLiteralOrYear.getTimezoneOffset();
 
@@ -897,7 +901,7 @@ function BzDate(dateOrLiteralOrYear, formatOrOffsetOrMonth, offsetOrDay, hour, m
   };
 
   this.isEqual = function (date) {
-      if (!(date instanceof BzDate)) {
+      if (!(isBzDate(date))) {
           throw new Error("Invalid argument - date: " + date);
       }
 
@@ -986,7 +990,7 @@ function BzDate(dateOrLiteralOrYear, formatOrOffsetOrMonth, offsetOrDay, hour, m
 }
 
 BzDate.applyOffset = function (bzDate, applyOrAddOffset) {
-  if (bzDate instanceof BzDate) {
+  if (isBzDate(bzDate)) {
       var offset;
 
       if (applyOrAddOffset === true) {
@@ -1018,9 +1022,9 @@ BzDate.applyOffset = function (bzDate, applyOrAddOffset) {
 };
 
 BzDate.compare = function (bzDate1, bzDate2, applyOffsets) {
-  if (!(bzDate1 instanceof BzDate)) {
+  if (!(isBzDate(bzDate1))) {
       throw new Error("Invalid argument - bzDate1: " + bzDate1);
-  } else if (!(bzDate2 instanceof BzDate)) {
+  } else if (!(isBzDate(bzDate2))) {
       throw new Error("Invalid argument - bzDate2: " + bzDate2);
   }
 
@@ -1070,6 +1074,8 @@ BzDate.isStringADate = function (dateString, format) {
       return true;
   }
 };
+
+BzDate.isBzDate = isBzDate;
 
 /*
 * Date Format 1.2.3
@@ -1129,7 +1135,7 @@ var dateFormat = function () {
   // Regexes and supporting functions are cached through closure
   return {
       toString: function (date, mask, offsetVisible) {
-          if (!(date instanceof BzDate)) {
+          if (!(isBzDate(date))) {
               throw new Error("Invalid argument - date: " + date);
           } else if (mask && (typeof mask !== "string")) {
               throw new Error("Invalid argument - mask: " + mask);
