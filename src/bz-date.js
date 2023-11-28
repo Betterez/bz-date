@@ -641,6 +641,10 @@ function NullBzDate() {
       throw new Error("Can set on null object");
   };
 
+  this.setMilliseconds = function (seconds) {
+    throw new Error("Can set on null object");
+  };
+
   this.toLiteral = function () {
       return {value: 0, offset: 0};
   };
@@ -949,6 +953,11 @@ function BzDate(dateOrLiteralOrYear, formatOrOffsetOrMonth, offsetOrDay, hour, m
   this.setSeconds = function (seconds) {
       _date.setUTCSeconds(seconds);
       return this;
+  }
+
+  this.setMilliseconds = function (milliseconds) {
+    _date.setUTCMilliseconds(milliseconds);
+    return this;
   }
 
   this.toLiteral = function () {
