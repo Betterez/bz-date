@@ -1,9 +1,9 @@
-const expect = require("chai").expect;
-const moment = require("moment-timezone");
-const BzDate = require("../index").BzDate;
-const timezones = require("../index").timezones;
-
 describe("BzDate", function () {
+  const expect = require("chai").expect;
+  const moment = require("moment-timezone");
+  const BzDate = require("../index").BzDate;
+  const timezones = require("../index").timezones;
+
   it("should declare a list of standard IANA timezone names that are interoperable with Moment.js", () => {
     // Interoperability with Moment.js is important and there are several places in the system where the timezones in BzDate
     // are provided to Moment.js
