@@ -1,8 +1,9 @@
+const { describe, it } = require("node:test");
+
 describe("BzDate", function () {
-  const expect = require("chai").expect;
+  const assert = require("node:assert/strict");
   const moment = require("moment-timezone");
-  const BzDate = require("../index").BzDate;
-  const timezones = require("../index").timezones;
+  const { BzDate, timezones } = require("../index");
 
   it("should declare a list of standard IANA timezone names that are interoperable with Moment.js", () => {
     // Interoperability with Moment.js is important and there are several places in the system where the timezones in BzDate
@@ -13,7 +14,7 @@ describe("BzDate", function () {
     });
 
     for (const timezoneFromBzDate of allTimezonesAvailableInBzDate) {
-      expect(allTimezonesRecognizedByMoment).to.include(timezoneFromBzDate);
+      assert.ok(allTimezonesRecognizedByMoment.includes(timezoneFromBzDate));
     }
   });
 
@@ -27,7 +28,7 @@ describe("BzDate", function () {
         "tz" : "America/Toronto"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-240);
+      assert.equal(offset, -240);
     });
 
     it("should get the standard offset of the America/Toronto timezone", () => {
@@ -38,7 +39,7 @@ describe("BzDate", function () {
         "tz" : "America/Toronto"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-300);
+      assert.equal(offset, -300);
     });
 
     it("should get the standard offset of the America/Monterrey timezone", () => {
@@ -49,7 +50,7 @@ describe("BzDate", function () {
         "tz" : "America/Monterrey"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-360);
+      assert.equal(offset, -360);
     });
 
     it("should get the daylight offset of the America/Monterrey timezone", () => {
@@ -60,7 +61,7 @@ describe("BzDate", function () {
         "tz" : "America/Monterrey"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-360);
+      assert.equal(offset, -360);
     });
 
     it("should get the daylight offset of the America/Tijuana timezone", () => {
@@ -71,7 +72,7 @@ describe("BzDate", function () {
         "tz" : "America/Tijuana"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-420);
+      assert.equal(offset, -420);
     });
 
     it("should get the standard offset of the America/Tijuana timezone", () => {
@@ -82,7 +83,7 @@ describe("BzDate", function () {
         "tz" : "America/Tijuana"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-480);
+      assert.equal(offset, -480);
     });
 
     it("should get the standard offset using the America/Toronto timezone if the timezone is not matched", () => {
@@ -93,7 +94,7 @@ describe("BzDate", function () {
         "tz" : "US/Hawaii"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-600);
+      assert.equal(offset, -600);
     });
 
     it("should get the standard offset using the America/Toronto timezone if the timezone is not matched", () => {
@@ -104,13 +105,13 @@ describe("BzDate", function () {
         "tz" : "US/Hawaii"
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(-600);
+      assert.equal(offset, -600);
     });
 
     it("should get TimeZone passed by parameter in constructor ", () => {
       const date = new BzDate(new Date(),-240);
       const offset = date.getTimezoneOffset();
-      expect(offset).to.be.eql(-240);
+      assert.equal(offset, -240);
     });
 
     it("should get the standard offset of the UTC timezone", () => {
@@ -119,7 +120,7 @@ describe("BzDate", function () {
         "name" : "(UTC+0:00) Dublin (Ireland), London (United Kingdom)",
       };
       const offset = timezones.getOffset(timezone, date);
-      expect(offset).to.be.eql(0);
+      assert.equal(offset, 0);
     });
   });
 
@@ -131,7 +132,7 @@ describe("BzDate", function () {
         "daylight" : true,
       };
       const dow = date.getDayOfWeekName(false,timezone);
-      expect(dow).to.be.eql("Saturday");
+      assert.equal(dow, "Saturday");
     });
 
     it("should get Day of the week according UTC timezone", () => {
@@ -141,7 +142,7 @@ describe("BzDate", function () {
         "daylight" : true,
       };
       const dow = date.getDayOfWeekName(false,timezone);
-      expect(dow).to.be.eql("Friday");
+      assert.equal(dow, "Friday");
     });
 
     it("shouldn't change timeZone of BzDate instance", () => {
@@ -153,13 +154,13 @@ describe("BzDate", function () {
       const dateOldOffset = date.getTimezoneOffset();
       date.getDayOfWeekName(false,timezone);
       const dateNewOffset = date.getTimezoneOffset();
-      expect(dateOldOffset).to.be.eql(dateNewOffset);
+      assert.equal(dateOldOffset, dateNewOffset);
     });
 
     it("shouldn't change timeZone if timeZone is null", () => {
       const date = new BzDate(2021,1,1,0,0,0,0,0,0); //1st of January was Friday
       const dow = date.getDayOfWeekName(false,null);
-      expect(dow).to.be.eql("Friday")
+      assert.equal(dow, "Friday");
     });
     
   });
