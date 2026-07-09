@@ -60,16 +60,16 @@ var zones = {
       "standard": {key: "L8ST-America/Los_Angeles", name: "UTC-8 Standard Time", offSet: -480},
       "observe_DST": true
   },
-  "(UTC-8:00) Vancouver (Canada)": {
-      "tz": "America/Vancouver",
-      "daylight": {key: "L8DT-America/Vancouver", name: "UTC-8 Daylight Time", offSet: -420},
-      "standard": {key: "L8ST-America/Vancouver", name: "UTC-8 Standard Time", offSet: -480},
-      "observe_DST": true
-  },
   "(UTC-7:00) Yukon (Canada)": {
       "tz": "Canada/Yukon",
       "daylight": {key: "L7DT-Canada/Yukon", name: "UTC-7 Daylight Time", offSet: -420},
       "standard": {key: "L7ST-Canada/Yukon", name: "UTC-7 Standard Time", offSet: -420},
+      "observe_DST": false
+  },
+  "(UTC-7:00) Vancouver (Canada)": {
+      "tz": "America/Vancouver",
+      "daylight": {key: "L7DT-America/Vancouver", name: "UTC-7 Daylight Time", offSet: -420},
+      "standard": {key: "L7ST-America/Vancouver", name: "UTC-7 Standard Time", offSet: -420},
       "observe_DST": false
   },
   "(UTC-7:00) Chihuahua - Away from US border (Mexico)": {
@@ -366,6 +366,14 @@ var zones = {
       "tz": "Canada/Yukon",
       "daylight": {key: "L7DT", name: "UTC-7 Daylight Time", offSet: -420},
       "standard": {key: "L7ST", name: "UTC-7 Standard Time", offSet: -420},
+      "observe_DST": false
+  },
+  "(UTC-8:00) Vancouver (Canada)": {
+      "deprecated": true,
+      // Vancouver is full year round in UTC-7, not UTC-8 as it was before.
+      "tz": "America/Vancouver",
+      "daylight": {key: "L7DT-America/Vancouver", name: "UTC-7 Daylight Time", offSet: -420},
+      "standard": {key: "L7ST-America/Vancouver", name: "UTC-7 Standard Time", offSet: -420},
       "observe_DST": false
   },
   "(UTC-7:00) Phoenix (United States), Calgary (Canada)": {

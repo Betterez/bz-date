@@ -122,6 +122,18 @@ describe("BzDate", function () {
       const offset = timezones.getOffset(timezone, date);
       assert.equal(offset, 0);
     });
+
+    it("should get -420 year-round for the new (UTC-7:00) Vancouver timezone", () => {
+      const timezone = {name: "(UTC-7:00) Vancouver (Canada)", tz: "America/Vancouver"};
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 7, 15, 0, 0, 0)), -420);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 1, 15, 0, 0, 0)), -420);
+    });
+
+    it("should get -420 year-round for the deprecated (UTC-8:00) Vancouver timezone", () => {
+      const timezone = {name: "(UTC-8:00) Vancouver (Canada)", tz: "America/Vancouver"};
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 7, 15, 0, 0, 0)), -420);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 1, 15, 0, 0, 0)), -420);
+    });
   });
 
   describe("BzDate.getDayOfWeekName", function () {
