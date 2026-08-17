@@ -174,6 +174,23 @@ describe("BzDate", function () {
       const dow = date.getDayOfWeekName(false,null);
       assert.equal(dow, "Friday");
     });
-    
+
+  });
+
+  describe("BzDate.toString", function () {
+    it("should render single-quoted literals in the mask verbatim", () => {
+      const date = new BzDate(2026,8,17,10,30,0);
+      assert.equal(date.toString("HH:MM 'Time'"), "10:30 Time");
+    });
+
+    it("shouldn't substitute format tokens inside a single-quoted literal", () => {
+      const date = new BzDate(2026,8,17,10,30,0);
+      assert.equal(date.toString("HH:MM 'T'"), "10:30 T");
+    });
+
+    it("should render double-quoted literals in the mask verbatim", () => {
+      const date = new BzDate(2026,8,17,10,30,0);
+      assert.equal(date.toString('HH:MM "Time"'), "10:30 Time");
+    });
   });
 });
