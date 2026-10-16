@@ -134,6 +134,30 @@ describe("BzDate", function () {
       assert.equal(timezones.getOffset(timezone, new BzDate(2026, 7, 15, 0, 0, 0)), -420);
       assert.equal(timezones.getOffset(timezone, new BzDate(2026, 1, 15, 0, 0, 0)), -420);
     });
+
+    it("should get -300 year-round for the new (UTC-5:00) Winnipeg timezone", () => {
+      const timezone = {name: "(UTC-5:00) Winnipeg (Canada)", tz: "America/Winnipeg"};
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 7, 15, 0, 0, 0)), -300);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 1, 15, 0, 0, 0)), -300);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 11, 15, 0, 0, 0)), -300);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 2, 16, 0, 0, 0)), -300);
+    });
+
+    it("should get -300 year-round for the deprecated (UTC-6:00) Winnipeg timezone", () => {
+      const timezone = {name: "(UTC-6:00) Winnipeg (Canada)", tz: "America/Winnipeg"};
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 7, 15, 0, 0, 0)), -300);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 1, 15, 0, 0, 0)), -300);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 11, 15, 0, 0, 0)), -300);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 2, 16, 0, 0, 0)), -300);
+    });
+
+    it("should mark the old (UTC-6:00) Winnipeg entry as deprecated", () => {
+      const zones = timezones.getZonesWithDST();
+      assert.equal(zones["(UTC-5:00) Winnipeg (Canada)"].deprecated, undefined);
+      assert.equal(zones["(UTC-6:00) Winnipeg (Canada)"].deprecated, true);
+      assert.equal(zones["(UTC-5:00) Winnipeg (Canada)"].observe_DST, false);
+      assert.equal(zones["(UTC-6:00) Winnipeg (Canada)"].observe_DST, false);
+    });
   });
 
   describe("BzDate.getDayOfWeekName", function () {

@@ -120,12 +120,6 @@ var zones = {
       "standard": {key: "L6ST-America/Chicago", name: "UTC-6 Standard Time", offSet: -360},
       "observe_DST": true
   },
-  "(UTC-6:00) Winnipeg (Canada)": {
-      "tz": "America/Winnipeg",
-      "daylight": {key: "L6DT-America/Winnipeg", name: "UTC-6 Daylight Time", offSet: -300},
-      "standard": {key: "L6ST-America/Winnipeg", name: "UTC-6 Standard Time", offSet: -360},
-      "observe_DST": true
-  },
   "(UTC-6:00) Matamoros (Mexico)": {
       "tz": "America/Matamoros",
       "daylight": {key: "L6DT-America/Matamoros", name: "UTC-6 Daylight Time", offSet: -300},
@@ -155,6 +149,12 @@ var zones = {
       "daylight": {key: "L5DT", name: "UTC-5 Daylight Time", offSet: -240},
       "standard": {key: "L5ST", name: "UTC-5 Standard Time", offSet: -300},
       "observe_DST": true
+  },
+  "(UTC-5:00) Winnipeg (Canada)": {
+      "tz": "America/Winnipeg",
+      "daylight": {key: "L5DT-America/Winnipeg", name: "UTC-5 Daylight Time", offSet: -300},
+      "standard": {key: "L5ST-America/Winnipeg", name: "UTC-5 Standard Time", offSet: -300},
+      "observe_DST": false
   },
   "(UTC-5:00) Quintana Roo (Mexico)": {
       "tz": "America/Cancun",
@@ -374,6 +374,14 @@ var zones = {
       "tz": "America/Vancouver",
       "daylight": {key: "L7DT-America/Vancouver", name: "UTC-7 Daylight Time", offSet: -420},
       "standard": {key: "L7ST-America/Vancouver", name: "UTC-7 Standard Time", offSet: -420},
+      "observe_DST": false
+  },
+  "(UTC-6:00) Winnipeg (Canada)": {
+      "deprecated": true,
+      // Manitoba moved to permanent UTC-5 (EST) after 2026-10-31 (IANA tzdb 2026e).
+      "tz": "America/Winnipeg",
+      "daylight": {key: "L5DT-America/Winnipeg", name: "UTC-5 Daylight Time", offSet: -300},
+      "standard": {key: "L5ST-America/Winnipeg", name: "UTC-5 Standard Time", offSet: -300},
       "observe_DST": false
   },
   "(UTC-7:00) Phoenix (United States), Calgary (Canada)": {
