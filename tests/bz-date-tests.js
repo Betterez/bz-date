@@ -42,6 +42,24 @@ describe("BzDate", function () {
       assert.equal(offset, -300);
     });
 
+    it("should get the daylight offset of America/Toronto in 2027 after cutoff tables were extended", () => {
+      const timezone = {
+        name: "(UTC-5:00) New York (United States), Toronto (Canada)",
+        daylight: true,
+        tz: "America/Toronto"
+      };
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 6, 15, 0, 0, 0)), -240);
+    });
+
+    it("should get the standard offset of America/Toronto in 2027 after cutoff tables were extended", () => {
+      const timezone = {
+        name: "(UTC-5:00) New York (United States), Toronto (Canada)",
+        daylight: true,
+        tz: "America/Toronto"
+      };
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 2, 15, 0, 0, 0)), -300);
+    });
+
     it("should get the standard offset of the America/Monterrey timezone", () => {
       const date = new BzDate(2019, 10, 27, 0, 0, 0);
       const timezone = {

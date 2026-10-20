@@ -14,7 +14,17 @@ var cutOffDaylightDates = {
   "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
   "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
   "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
-  "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
+  "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")},
+  "2027": {from: new BzDate("03/14/2027"), to: new BzDate("11/07/2027")},
+  "2028": {from: new BzDate("03/12/2028"), to: new BzDate("11/05/2028")},
+  "2029": {from: new BzDate("03/11/2029"), to: new BzDate("11/04/2029")},
+  "2030": {from: new BzDate("03/10/2030"), to: new BzDate("11/03/2030")},
+  "2031": {from: new BzDate("03/09/2031"), to: new BzDate("11/02/2031")},
+  "2032": {from: new BzDate("03/14/2032"), to: new BzDate("11/07/2032")},
+  "2033": {from: new BzDate("03/13/2033"), to: new BzDate("11/06/2033")},
+  "2034": {from: new BzDate("03/12/2034"), to: new BzDate("11/05/2034")},
+  "2035": {from: new BzDate("03/11/2035"), to: new BzDate("11/04/2035")},
+  "2036": {from: new BzDate("03/09/2036"), to: new BzDate("11/02/2036")}
 };
 
 var zones = {

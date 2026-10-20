@@ -143,7 +143,7 @@ After thorough research, several critical issues have been identified in the tim
 
 ### Known issues
 
-1. **Hardcoded DST dates** - DST transitions are hardcoded and expire in 2026 (no data beyond that year)
+1. **Hardcoded DST dates** - DST transitions are still hardcoded (generic US table through 2036)
 2. **Incorrect timezone rules** - Some timezones use incorrect DST transition dates for their regions
 3. **Time-ignorant DST transitions** - BzDate only checks dates, not the specific hour when DST changes occur
 4. **Missing IANA database integration** - Returns IANA timezone names but relies on manually maintained timezone data instead of the standard IANA timezone database
