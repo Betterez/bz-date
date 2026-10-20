@@ -100,12 +100,6 @@ var zones = {
       "standard": {key: "L7ST-America/Hermosillo", name: "UTC-7 Standard Time", offSet: -420},
       "observe_DST": false
   },
-  "(UTC-7:00) Calgary (Canada), Edmonton (Canada)": {
-      "tz": "America/Edmonton",
-      "daylight": {key: "L7DT-America/Edmonton", name: "UTC-7 Daylight Time", offSet: -360},
-      "standard": {key: "L7ST-America/Edmonton", name: "UTC-7 Standard Time", offSet: -420},
-      "observe_DST": true
-  },
   "(UTC-7:00) Phoenix (United States)": {
       "tz": "America/Phoenix",
       "daylight": {key: "L7DT-America/Phoenix", name: "UTC-7 Daylight Time", offSet: -420},
@@ -152,6 +146,12 @@ var zones = {
       "tz": "America/Regina",
       "daylight": {key: "L6DT-America/Regina", name: "UTC-6 Standard Time", offSet: -360},
       "standard": {key: "L6ST-America/Regina", name: "UTC-6 Standard Time", offSet: -360},
+      "observe_DST": false
+  },
+  "(UTC-6:00) Calgary (Canada), Edmonton (Canada)": {
+      "tz": "America/Edmonton",
+      "daylight": {key: "L6DT-America/Edmonton", name: "UTC-6 Daylight Time", offSet: -360},
+      "standard": {key: "L6ST-America/Edmonton", name: "UTC-6 Standard Time", offSet: -360},
       "observe_DST": false
   },
   "(UTC-5:00) New York (United States), Toronto (Canada)": {
@@ -392,6 +392,14 @@ var zones = {
       "tz": "America/Winnipeg",
       "daylight": {key: "L5DT-America/Winnipeg", name: "UTC-5 Daylight Time", offSet: -300},
       "standard": {key: "L5ST-America/Winnipeg", name: "UTC-5 Standard Time", offSet: -300},
+      "observe_DST": false
+  },
+  "(UTC-7:00) Calgary (Canada), Edmonton (Canada)": {
+      "deprecated": true,
+      // Alberta moved to permanent UTC-6 after 2026-10-31 (IANA tzdb 2026d).
+      "tz": "America/Edmonton",
+      "daylight": {key: "L6DT-America/Edmonton", name: "UTC-6 Daylight Time", offSet: -360},
+      "standard": {key: "L6ST-America/Edmonton", name: "UTC-6 Standard Time", offSet: -360},
       "observe_DST": false
   },
   "(UTC-7:00) Phoenix (United States), Calgary (Canada)": {

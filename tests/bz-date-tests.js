@@ -176,6 +176,28 @@ describe("BzDate", function () {
       assert.equal(zones["(UTC-5:00) Winnipeg (Canada)"].observe_DST, false);
       assert.equal(zones["(UTC-6:00) Winnipeg (Canada)"].observe_DST, false);
     });
+
+    it("should get -360 year-round for the new (UTC-6:00) Calgary/Edmonton timezone", () => {
+      const timezone = {name: "(UTC-6:00) Calgary (Canada), Edmonton (Canada)", tz: "America/Edmonton"};
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 10, 25, 0, 0, 0)), -360);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 1, 15, 0, 0, 0)), -360);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 7, 15, 0, 0, 0)), -360);
+    });
+
+    it("should get -360 year-round for the deprecated (UTC-7:00) Calgary/Edmonton timezone", () => {
+      const timezone = {name: "(UTC-7:00) Calgary (Canada), Edmonton (Canada)", tz: "America/Edmonton"};
+      assert.equal(timezones.getOffset(timezone, new BzDate(2026, 10, 25, 0, 0, 0)), -360);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 1, 15, 0, 0, 0)), -360);
+      assert.equal(timezones.getOffset(timezone, new BzDate(2027, 7, 15, 0, 0, 0)), -360);
+    });
+
+    it("should mark the old (UTC-7:00) Calgary/Edmonton entry as deprecated", () => {
+      const zones = timezones.getZonesWithDST();
+      assert.equal(zones["(UTC-6:00) Calgary (Canada), Edmonton (Canada)"].deprecated, undefined);
+      assert.equal(zones["(UTC-7:00) Calgary (Canada), Edmonton (Canada)"].deprecated, true);
+      assert.equal(zones["(UTC-6:00) Calgary (Canada), Edmonton (Canada)"].observe_DST, false);
+      assert.equal(zones["(UTC-7:00) Calgary (Canada), Edmonton (Canada)"].observe_DST, false);
+    });
   });
 
   describe("BzDate.getDayOfWeekName", function () {
