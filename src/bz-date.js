@@ -14,7 +14,17 @@ var cutOffDaylightDates = {
   "2023": {from: new BzDate("03/12/2023"), to: new BzDate("11/05/2023")},
   "2024": {from: new BzDate("03/10/2024"), to: new BzDate("11/03/2024")},
   "2025": {from: new BzDate("03/09/2025"), to: new BzDate("11/02/2025")},
-  "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")}
+  "2026": {from: new BzDate("03/08/2026"), to: new BzDate("11/01/2026")},
+  "2027": {from: new BzDate("03/14/2027"), to: new BzDate("11/07/2027")},
+  "2028": {from: new BzDate("03/12/2028"), to: new BzDate("11/05/2028")},
+  "2029": {from: new BzDate("03/11/2029"), to: new BzDate("11/04/2029")},
+  "2030": {from: new BzDate("03/10/2030"), to: new BzDate("11/03/2030")},
+  "2031": {from: new BzDate("03/09/2031"), to: new BzDate("11/02/2031")},
+  "2032": {from: new BzDate("03/14/2032"), to: new BzDate("11/07/2032")},
+  "2033": {from: new BzDate("03/13/2033"), to: new BzDate("11/06/2033")},
+  "2034": {from: new BzDate("03/12/2034"), to: new BzDate("11/05/2034")},
+  "2035": {from: new BzDate("03/11/2035"), to: new BzDate("11/04/2035")},
+  "2036": {from: new BzDate("03/09/2036"), to: new BzDate("11/02/2036")}
 };
 
 var zones = {
@@ -90,12 +100,6 @@ var zones = {
       "standard": {key: "L7ST-America/Hermosillo", name: "UTC-7 Standard Time", offSet: -420},
       "observe_DST": false
   },
-  "(UTC-7:00) Calgary (Canada), Edmonton (Canada)": {
-      "tz": "America/Edmonton",
-      "daylight": {key: "L7DT-America/Edmonton", name: "UTC-7 Daylight Time", offSet: -360},
-      "standard": {key: "L7ST-America/Edmonton", name: "UTC-7 Standard Time", offSet: -420},
-      "observe_DST": true
-  },
   "(UTC-7:00) Phoenix (United States)": {
       "tz": "America/Phoenix",
       "daylight": {key: "L7DT-America/Phoenix", name: "UTC-7 Daylight Time", offSet: -420},
@@ -142,6 +146,12 @@ var zones = {
       "tz": "America/Regina",
       "daylight": {key: "L6DT-America/Regina", name: "UTC-6 Standard Time", offSet: -360},
       "standard": {key: "L6ST-America/Regina", name: "UTC-6 Standard Time", offSet: -360},
+      "observe_DST": false
+  },
+  "(UTC-6:00) Calgary (Canada), Edmonton (Canada)": {
+      "tz": "America/Edmonton",
+      "daylight": {key: "L6DT-America/Edmonton", name: "UTC-6 Daylight Time", offSet: -360},
+      "standard": {key: "L6ST-America/Edmonton", name: "UTC-6 Standard Time", offSet: -360},
       "observe_DST": false
   },
   "(UTC-5:00) New York (United States), Toronto (Canada)": {
@@ -382,6 +392,14 @@ var zones = {
       "tz": "America/Winnipeg",
       "daylight": {key: "L5DT-America/Winnipeg", name: "UTC-5 Daylight Time", offSet: -300},
       "standard": {key: "L5ST-America/Winnipeg", name: "UTC-5 Standard Time", offSet: -300},
+      "observe_DST": false
+  },
+  "(UTC-7:00) Calgary (Canada), Edmonton (Canada)": {
+      "deprecated": true,
+      // Alberta moved to permanent UTC-6 after 2026-10-31 (IANA tzdb 2026d).
+      "tz": "America/Edmonton",
+      "daylight": {key: "L6DT-America/Edmonton", name: "UTC-6 Daylight Time", offSet: -360},
+      "standard": {key: "L6ST-America/Edmonton", name: "UTC-6 Standard Time", offSet: -360},
       "observe_DST": false
   },
   "(UTC-7:00) Phoenix (United States), Calgary (Canada)": {

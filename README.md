@@ -143,10 +143,11 @@ After thorough research, several critical issues have been identified in the tim
 
 ### Known issues
 
-1. **Hardcoded DST dates** - DST transitions are hardcoded and expire in 2026 (no data beyond that year)
+1. **Hardcoded DST dates** - DST transitions are still hardcoded (generic US table through 2036)
 2. **Incorrect timezone rules** - Some timezones use incorrect DST transition dates for their regions
-3. **Time-ignorant DST transitions** - BzDate only checks dates, not the specific hour when DST changes occur
-4. **Missing IANA database integration** - Returns IANA timezone names but relies on manually maintained timezone data instead of the standard IANA timezone database
+3. **No effective-from dates** - A zone that became permanent mid-year cannot express "permanent after date X". Offsets for dates *before* the switch can be one hour off (e.g. past winters for Alberta, Manitoba and B.C.). That only matters when something *recalculates* those old dates — reports, manifests, reprints — not for new sales after the permanent cutover
+4. **Time-ignorant DST transitions** - BzDate only checks dates, not the specific hour when DST changes occur
+5. **Missing IANA database integration** - Returns IANA timezone names but relies on manually maintained timezone data instead of the standard IANA timezone database
 
 ### Recommendations
 
